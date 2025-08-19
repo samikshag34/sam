@@ -1,4 +1,4 @@
-name: Cron Job Every 5 Min
+name: Cron Job Every 2 Min
 
 on:
   push:
