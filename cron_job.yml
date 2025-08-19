@@ -1,0 +1,19 @@
+name: Cron Job Every 2 Min
+
+on:
+  
+
+  schedule:
+    # Every day at midnight UTC
+    - cron: "*/2****"
+
+  
+jobs:
+  cron-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print time
+        run: pwd
+
+      - name: list files in the directory
+        run: ls -la
