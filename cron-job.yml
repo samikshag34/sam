@@ -1,0 +1,19 @@
+name: Cron Job Every 5 Min
+
+on:
+  push:
+    branches:
+      - main
+
+  schedule:
+    # Every day at midnight UTC
+    - cron: "*/2****"
+
+  workflow_dispatch:
+
+jobs:
+  cron-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print time
+        run: echo "Cron job triggered at $(date)"
