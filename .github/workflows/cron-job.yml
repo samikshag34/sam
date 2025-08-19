@@ -1,7 +1,9 @@
 name: Cron Job Every 2 Min
 
 on:
-  
+  schedule:
+    # Every 5 minutes 
+    - cron: "*/5 * * * *"
 
   workflow_dispatch:
 
@@ -9,8 +11,8 @@ jobs:
   cron-task:
     runs-on: ubuntu-latest
     steps:
-      - name: Show current working directory
-        run: pwd
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: List files in the directory
-        run: lw ld 
+      - name: Print time
+        run: echo "✅ Cron job triggered successfully at $(date)"
